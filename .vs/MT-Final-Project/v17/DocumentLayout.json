@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0ECC50F3-EEF8-B90D-048B-C21DB6EBE112}|Assembly-CSharp.csproj|d:\\study\\graduationproject\\digitalsupermarket\\mt-final-project\\assets\\modernsupermarket\\scripts\\hidelisttoggle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECC50F3-EEF8-B90D-048B-C21DB6EBE112}|Assembly-CSharp.csproj|solutionrelative:assets\\modernsupermarket\\scripts\\hidelisttoggle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0ECC50F3-EEF8-B90D-048B-C21DB6EBE112}|Assembly-CSharp.csproj|d:\\study\\graduationproject\\digitalsupermarket\\mt-final-project\\assets\\modernsupermarket\\scripts\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECC50F3-EEF8-B90D-048B-C21DB6EBE112}|Assembly-CSharp.csproj|solutionrelative:assets\\modernsupermarket\\scripts\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,19 +55,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "HideListToggle.cs",
+              "DocumentMoniker": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\HideListToggle.cs",
+              "RelativeDocumentMoniker": "Assets\\ModernSupermarket\\Scripts\\HideListToggle.cs",
+              "ToolTip": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\HideListToggle.cs",
+              "RelativeToolTip": "Assets\\ModernSupermarket\\Scripts\\HideListToggle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T17:37:34.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ShoppingCart.cs",
               "DocumentMoniker": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\ShoppingCart.cs",
               "RelativeDocumentMoniker": "Assets\\ModernSupermarket\\Scripts\\ShoppingCart.cs",
               "ToolTip": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\ShoppingCart.cs",
               "RelativeToolTip": "Assets\\ModernSupermarket\\Scripts\\ShoppingCart.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAADwv4IAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwv4AAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-29T12:09:36.922Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "FreeCamera.cs",
               "DocumentMoniker": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\FreeCamera.cs",
               "RelativeDocumentMoniker": "Assets\\ModernSupermarket\\Scripts\\FreeCamera.cs",
@@ -71,12 +88,11 @@
               "RelativeToolTip": "Assets\\ModernSupermarket\\Scripts\\FreeCamera.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAAwGcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T11:42:03.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-29T11:42:03.512Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainThreadDispatcher.cs",
               "DocumentMoniker": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\MainThreadDispatcher.cs",
               "RelativeDocumentMoniker": "Assets\\ModernSupermarket\\Scripts\\MainThreadDispatcher.cs",
@@ -88,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DeepSeekClient.cs",
               "DocumentMoniker": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\DeepSeekClient.cs",
               "RelativeDocumentMoniker": "Assets\\ModernSupermarket\\Scripts\\DeepSeekClient.cs",
@@ -100,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AzureTTSPlayer.cs",
               "DocumentMoniker": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\AzureTTSPlayer.cs",
               "RelativeDocumentMoniker": "Assets\\ModernSupermarket\\Scripts\\AzureTTSPlayer.cs",
@@ -112,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AzureToDeepSeek.cs",
               "DocumentMoniker": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\AzureToDeepSeek.cs",
               "RelativeDocumentMoniker": "Assets\\ModernSupermarket\\Scripts\\AzureToDeepSeek.cs",
@@ -124,7 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DeepSeekResponse.cs",
               "DocumentMoniker": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\DeepSeekResponse.cs",
               "RelativeDocumentMoniker": "Assets\\ModernSupermarket\\Scripts\\DeepSeekResponse.cs",
@@ -136,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "WavUtility.cs",
               "DocumentMoniker": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\WavUtility.cs",
               "RelativeDocumentMoniker": "Assets\\ModernSupermarket\\Scripts\\WavUtility.cs",
@@ -148,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SubtitleManager.cs",
               "DocumentMoniker": "D:\\Study\\GraduationProject\\DigitalSupermarket\\MT-Final-Project\\Assets\\ModernSupermarket\\Scripts\\SubtitleManager.cs",
               "RelativeDocumentMoniker": "Assets\\ModernSupermarket\\Scripts\\SubtitleManager.cs",

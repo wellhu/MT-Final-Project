@@ -21,6 +21,9 @@ public class ShoppingCart : MonoBehaviour
     public float cartMass = 10f; // 购物车质量 - 建议设置小一点
     public float dragForce = 0.5f; // 阻力 - 建议设置小一点
     
+    [Header("Movement Mode")]
+    public bool useRigidbodyMovement = false; // 是否用刚体物理移动
+    
     private Rigidbody cartRigidbody;
     
     void Start()
@@ -50,22 +53,25 @@ public class ShoppingCart : MonoBehaviour
         var fastMode = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         var speed = fastMode ? fastMovementSpeed : movementSpeed;
 
-        // WASD移动
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        // 仅在未启用刚体物理移动时，使用transform.position直接移动
+        if (!useRigidbodyMovement)
         {
-            transform.position += -transform.forward * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += transform.forward * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += -transform.right * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.position += transform.right * speed * Time.deltaTime;
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                transform.position += -transform.forward * speed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                transform.position += transform.forward * speed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            {
+                transform.position += -transform.right * speed * Time.deltaTime;
+            }
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                transform.position += transform.right * speed * Time.deltaTime;
+            }
         }
 
         // 右键旋转
@@ -80,47 +86,30 @@ public class ShoppingCart : MonoBehaviour
     
     void FixedUpdate()
     {
-        HandleMovement();
-    }
-    
-    void HandleMovement()
-    {
-        Vector3 moveDirection = Vector3.zero;
-        
-        // 检查是否按住Shift键进行快速移动
-        bool fastMode = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-        float currentSpeed = fastMode ? fastMovementSpeed : movementSpeed;
-        
-        // WASD移动输入
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (useRigidbodyMovement)
         {
-            moveDirection += transform.right;
-        }
-        
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            moveDirection += -transform.right;
-        }
-        
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            moveDirection += -transform.forward;
-        }
-        
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            moveDirection += transform.forward;
-        }
-        
-        // 归一化移动方向并应用力
-        if (moveDirection.magnitude > 0)
-        {
-            moveDirection.Normalize();
-            Vector3 moveForce = moveDirection * currentSpeed;
-            cartRigidbody.AddForce(moveForce, ForceMode.Force);
-            
-            // 调试信息
-            Debug.Log($"Applying force: {moveForce}, Speed: {currentSpeed}");
+            Vector3 moveDirection = Vector3.zero;
+            bool fastMode = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+            float currentSpeed = fastMode ? fastMovementSpeed : movementSpeed;
+
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.UpArrow))
+                moveDirection += transform.right;
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.DownArrow))
+                moveDirection += -transform.right;
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                moveDirection += -transform.forward;
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                moveDirection += transform.forward;
+
+            if (moveDirection.magnitude > 0)
+            {
+                moveDirection.Normalize();
+                cartRigidbody.velocity = moveDirection * currentSpeed;
+            }
+            else
+            {
+                cartRigidbody.velocity = Vector3.zero;
+            }
         }
     }
     
