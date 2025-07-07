@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShoppingCart : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class ShoppingCart : MonoBehaviour
     
     [Header("Movement Mode")]
     public bool useRigidbodyMovement = false; // 是否用刚体物理移动
+    
+    [Header("Product UI")]
+    public GameObject productDetailsPanel; // ProductDetails面板
+    public Button closeButton; // close按钮
     
     private Rigidbody cartRigidbody;
     
@@ -46,6 +51,12 @@ public class ShoppingCart : MonoBehaviour
         // 调试信息
         Debug.Log($"ShoppingCart initialized - Mass: {cartRigidbody.mass}, Drag: {cartRigidbody.drag}");
         Debug.Log($"Rigidbody constraints: {cartRigidbody.constraints}");
+
+        // 绑定关闭按钮事件
+        if (closeButton != null)
+        {
+            closeButton.onClick.AddListener(HideProductDetailsPanel);
+        }
     }
     
     void Update()
@@ -81,7 +92,22 @@ public class ShoppingCart : MonoBehaviour
             transform.Rotate(0, mouseX, 0);
         }
 
-        HandleCameraDistance();
+        //HandleCameraDistance();
+
+        // 检测鼠标左键点击商品
+        if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                // 检查是否有ProductInfo组件
+                var info = hit.transform.GetComponent<ProductInfo>();
+                if (info != null)
+                {
+                    ShowProductDetailsPanel(info);
+                }
+            }
+        }
     }
     
     void FixedUpdate()
@@ -124,6 +150,32 @@ public class ShoppingCart : MonoBehaviour
             newDistance = Mathf.Clamp(newDistance, -10f, -1f); // 限制距离范围
             cameraMount.localPosition = new Vector3(currentPos.x, currentPos.y, newDistance);
         }
+    }
+
+    // 显示商品信息面板
+    void ShowProductDetailsPanel(ProductInfo info)
+    {
+        if (productDetailsPanel != null)
+        {
+            productDetailsPanel.SetActive(true);
+            // TODO: 填充UI内容（如名称、图片、描述等）
+        }
+    }
+
+    // 隐藏商品信息面板
+    void HideProductDetailsPanel()
+    {
+        if (productDetailsPanel != null)
+        {
+            productDetailsPanel.SetActive(false);
+        }
+    }
+
+    // 判断鼠标是否在UI上，避免误触
+    bool IsPointerOverUI()
+    {
+        return UnityEngine.EventSystems.EventSystem.current != null &&
+               UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
     }
     
 } 
